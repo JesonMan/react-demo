@@ -3,19 +3,23 @@ import {BrowserRouter as Router, Route, Switch, NavLink} from 'react-router-dom'
 import Loadable from 'react-loadable';
 import css from './router.scss';
 
+function Loading() {
+  return <div>loading...</div>;
+}
+
 const Home = Loadable({
   loader: () => import(/* webpackChunkName: "Home" */'pages/Home/Home'),
-  loading: <div>loading...</div>,
+  loading: Loading,
 });
 
 const Page1 = Loadable({
   loader: () => import(/* webpackChunkName: "Page1" */'pages/Page1/Page1'),
-  loading: <div>loading...</div>,
+  loading: Loading,
 });
 
 const Counter = Loadable({
   loader: () => import(/* webpackChunkName: "Counter" */'pages/Counter/Counter'),
-  loading: <div>loading...</div>,
+  loading: Loading,
 });
 
 const getRouter = () => (
