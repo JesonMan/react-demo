@@ -1,18 +1,21 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch, NavLink} from 'react-router-dom';
-import loadable from '@loadable/component';
+import Loadable from 'react-loadable';
 import css from './router.scss';
 
-const Home = loadable(() => import(/* webpackChunkName: "Home" */'pages/Home/Home'), {
-    fallback: <div>loading...</div>
+const Home = Loadable({
+  loader: () => import(/* webpackChunkName: "Home" */'pages/Home/Home'),
+  loading: <div>loading...</div>,
 });
 
-const Page1 = loadable(() => import(/* webpackChunkName: "Page1" */'pages/Page1/Page1'), {
-    fallback: <div>loading...</div>
+const Page1 = Loadable({
+  loader: () => import(/* webpackChunkName: "Page1" */'pages/Page1/Page1'),
+  loading: <div>loading...</div>,
 });
 
-const Counter = loadable(() => import(/* webpackChunkName: "Counter" */'pages/Counter/Counter'), {
-    fallback: <div>loading...</div>
+const Counter = Loadable({
+  loader: () => import(/* webpackChunkName: "Counter" */'pages/Counter/Counter'),
+  loading: <div>loading...</div>,
 });
 
 const getRouter = () => (
