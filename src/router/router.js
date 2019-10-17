@@ -8,18 +8,18 @@ function Loading() {
 }
 
 const Home = Loadable({
-  loader: () => import(/* webpackChunkName: "Home" */'pages/Home/Home'),
-  loading: Loading,
+    loader: () => import(/* webpackChunkName: "Home" */'pages/Home/Home'),
+    loading: Loading
 });
 
 const Page1 = Loadable({
-  loader: () => import(/* webpackChunkName: "Page1" */'pages/Page1/Page1'),
-  loading: Loading,
+    loader: () => import(/* webpackChunkName: "Page1" */'pages/Page1/Page1'),
+    loading: Loading
 });
 
 const Counter = Loadable({
-  loader: () => import(/* webpackChunkName: "Counter" */'pages/Counter/Counter'),
-  loading: Loading,
+    loader: () => import(/* webpackChunkName: "Counter" */'pages/Counter/Counter'),
+    loading: Loading
 });
 
 const getRouter = () => (
